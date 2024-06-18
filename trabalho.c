@@ -42,6 +42,16 @@ typedef struct{
     int codigoPaciente;
 } Consulta;
 
+void paciente_cadastrar()
+{
+    Paciente paciente;
+    
+    printf("Nome: ");
+    scanf("%s", paciente.nome); //%[^\n]
+}
+
+
+
 menu()
 {
     int opcao;
