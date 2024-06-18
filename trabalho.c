@@ -11,6 +11,37 @@ totalConsultas_dias();
 historico_paciente();
 historico_medico();
 
+typedef struct {
+    int dia;
+    int mes;
+    int ano;
+} Data;
+
+typedef struct {
+
+    int codigo;
+    char nome [char_max];
+    long int telefone;
+
+    Data data_nascimento;
+
+}Paciente;
+
+typedef struct {
+    int codigo;
+    char nome [char_max];
+    long int telefone;
+    char especialidade [char_max];
+}Medico;
+
+typedef struct{
+    int codigoConsulta;
+    Data data_consulta;
+    int hora;
+    int codigoMedico;
+    int codigoPaciente;
+} Consulta;
+
 menu()
 {
     int opcao;
