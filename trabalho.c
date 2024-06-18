@@ -4,6 +4,13 @@
 
 #define char_max 100
 
+paciente_cadastrar();
+medico_cadastrar();
+consulta_cadastrar();
+totalConsultas_dias();
+historico_paciente();
+historico_medico();
+
 menu()
 {
     int opcao;
@@ -23,31 +30,61 @@ menu()
         switch (opcao)
         {
         case 1:
+        {
             paciente_cadastrar();
             break;
+        }
         case 2:
+        {
             medico_cadastrar();
             break;
+        }
         case 3:
+        {
             consulta_cadastrar();
             break;
+        }
         case 4:
-            char data[char_max];
+        {
+             char data[char_max];
             printf("Digite uma data para ver as consultas agendadas: \n");
             printf("DD/MM/AA: \n");
-            scanf("%[^\n]", data); //
+            scanf("[^\n]", data);
+            totalConsultas_dia(data);
             break;
+        }
         case 5:
-            cadastrar_paciente();
+        {
+            int codigoPaciente;
+            printf("Digite o codigo do paciente para ver suas consultas passadas: ");
+            scanf("%d", &codigoPaciente);
+            historico_paciente(codigoPaciente);
             break;
+        }
+        case 6:
+        {
+            int codigoMedico;
+            printf("Digite o codigo do medico para ver suas consultas realizadas: ");
+            scanf("%d", &codigoMedico);
+            historico_medico(codigoMedico);
+            break;
+        }
         
-        default:
+        case 7:
+        {
+            printf("Sair\n");
             break;
         }
 
+        default:
+        {
+            printf("Opcao invalida\n");
+            break;
+        }
 
+        }
 
-    }while();
+    }while(opcao != 7);
 }
 
 
